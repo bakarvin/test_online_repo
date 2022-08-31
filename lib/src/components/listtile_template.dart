@@ -5,16 +5,16 @@ class ListTileCustom extends StatelessWidget {
   final String title;
   final IconData leadIcon;
   final IconData trailingIcon;
-  final VoidCallback callback;
+  final VoidCallback? callback;
   final Widget widgetCustom;
-  const ListTileCustom({
-    required this.isSwitch,
-    required this.title,
-    required this.leadIcon,
-    required this.trailingIcon,
-    required this.callback,
-    required this.widgetCustom
-  }) : super();
+  const ListTileCustom(
+      {required this.isSwitch,
+      required this.title,
+      required this.leadIcon,
+      required this.trailingIcon,
+      this.callback,
+      required this.widgetCustom})
+      : super();
 
   @override
   Widget build(BuildContext context) {
@@ -34,27 +34,23 @@ class ListTileCustom extends StatelessWidget {
             flex: 3,
             child: Text(
               title,
-              style: const TextStyle(
-                color: Colors.green
-              ),
+              style: const TextStyle(color: Colors.green),
             ),
           ),
           isSwitch == false
-          ? Expanded(
-              flex: 1,
-              child: Icon(
-                trailingIcon,
-                color: Colors.blueAccent,
-              ),
-          )
-          : const Expanded(
-              flex: 1,
-              child: Padding(
-                padding: EdgeInsets.symmetric(
-                  horizontal: 15
+              ? Expanded(
+                  flex: 1,
+                  child: Icon(
+                    trailingIcon,
+                    color: Colors.blueAccent,
+                  ),
+                )
+              : const Expanded(
+                  flex: 1,
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 15),
+                  ),
                 ),
-              ),
-          ),
         ],
       ),
     );

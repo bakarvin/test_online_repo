@@ -7,7 +7,7 @@ class CustomBottomNavButton extends StatefulWidget {
   final MaterialStateProperty<Color?>? colorEnabled;
   final MaterialStateProperty<Color?>? colorDisabled;
   final String title;
-  final VoidCallback onPressed;
+  final Function() onPressed;
   const CustomBottomNavButton(
       {required this.isEnabled,
       this.colorEnabled,

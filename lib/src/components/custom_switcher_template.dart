@@ -73,7 +73,7 @@ class _CustomSwitchState extends State<CustomSwitch>
                       : Alignment.centerLeft,
                   child: Container(
                     width: width / 10,
-                    height: height / 10,
+                    height: 50,
                     decoration: BoxDecoration(
                       shape: BoxShape.circle,
                       color: widget.value ? Colors.cyan : Colors.amber,

@@ -6,7 +6,7 @@ CustomAlert({
   required String title,
   required String description,
   required BuildContext context,
-  required List<InlineSpan> text,
+  List<InlineSpan>? text,
 }) {
   WidgetsBinding.instance.addPostFrameCallback((_) async {
     showDialog(

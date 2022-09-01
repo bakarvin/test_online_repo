@@ -326,4 +326,10 @@ class ThemeText {
         color: ThemeColorGeneral.red,
         fontSize: 11),
   );
+
+  static TextStyle customDialog = const TextStyle(
+    fontSize: 14.0,
+    color: Colors.black,
+    letterSpacing: 0.5,
+  );
 }

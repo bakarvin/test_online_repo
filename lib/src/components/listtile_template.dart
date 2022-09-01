@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:test_online_repo/src/components/custom_switcher_template.dart';
 
 class ListTileCustom extends StatelessWidget {
   final bool isSwitch;
@@ -45,12 +46,7 @@ class ListTileCustom extends StatelessWidget {
                     color: Colors.blueAccent,
                   ),
                 )
-              : const Expanded(
-                  flex: 1,
-                  child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 15),
-                  ),
-                ),
+              : Expanded(flex: 1, child: widgetCustom),
         ],
       ),
     );

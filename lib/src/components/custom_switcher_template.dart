@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:test_online_repo/test_online_repo.dart';
 
 class CustomSwitch extends StatefulWidget {
   final bool value;

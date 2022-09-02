@@ -212,7 +212,7 @@ class ThemeText {
   static TextStyle login = GoogleFonts.montserrat(
     textStyle: const TextStyle(
       fontWeight: FontWeight.w700,
-      color: Colors.white,
+      color: Colors.black,
       fontSize: 18,
     ),
   );

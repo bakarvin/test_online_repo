@@ -91,7 +91,7 @@ class _FormLoginState extends State<FormLogin> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: ThemeText.login,
-                        controller: widget.userCtrl,
+                        controller: widget.passCtrl,
                         maxLines: 1,
                         validator: (value) {
                           if (value!.isEmpty) {

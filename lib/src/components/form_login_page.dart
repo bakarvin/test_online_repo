@@ -8,7 +8,7 @@ class FormLogin extends StatefulWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController userCtrl;
   final TextEditingController passCtrl;
-  final Function(String)? validator;
+  final String? Function(String?)? validator;
   final Function()? onPressed;
   const FormLogin(
       {required this.formKey,
@@ -75,34 +75,28 @@ class _FormLoginState extends State<FormLogin> {
                     Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
-                        style: ThemeText.login,
-                        decoration: InputDecoration(
-                          isDense: true,
-                          filled: true,
-                          fillColor: Colors.grey,
-                          focusedBorder: InputBorder.none,
-                          enabledBorder: InputBorder.none,
-                          errorBorder: InputBorder.none,
-                          disabledBorder: InputBorder.none,
-                          hintText: 'ID Login',
-                          hintStyle: TextStyle(
-                              fontWeight: FontWeight.w400, fontSize: 14),
-                          contentPadding: EdgeInsets.only(
-                              left: 20, right: 20, top: 15, bottom: 9),
-                          suffixIcon: Icon(
-                            Icons.person,
-                            color: Colors.black,
+                          style: ThemeText.login,
+                          decoration: InputDecoration(
+                            isDense: true,
+                            filled: true,
+                            fillColor: Colors.grey,
+                            focusedBorder: InputBorder.none,
+                            enabledBorder: InputBorder.none,
+                            errorBorder: InputBorder.none,
+                            disabledBorder: InputBorder.none,
+                            hintText: 'ID Login',
+                            hintStyle: TextStyle(
+                                fontWeight: FontWeight.w400, fontSize: 14),
+                            contentPadding: EdgeInsets.only(
+                                left: 20, right: 20, top: 15, bottom: 9),
+                            suffixIcon: Icon(
+                              Icons.person,
+                              color: Colors.black,
+                            ),
                           ),
-                        ),
-                        controller: widget.userCtrl,
-                        maxLines: 1,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Harap masukan ID Login';
-                          }
-                          return null;
-                        },
-                      ),
+                          controller: widget.userCtrl,
+                          maxLines: 1,
+                          validator: widget.validator),
                     ),
                     const SizedBox(
                       height: 10,
@@ -131,12 +125,7 @@ class _FormLoginState extends State<FormLogin> {
                         ),
                         controller: widget.passCtrl,
                         maxLines: 1,
-                        validator: (value) {
-                          if (value!.isEmpty) {
-                            return 'Harap masukan ID Login';
-                          }
-                          return null;
-                        },
+                        validator: widget.validator,
                       ),
                     ),
                     const SizedBox(

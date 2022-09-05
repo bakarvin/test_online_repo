@@ -8,11 +8,13 @@ class FormLogin extends StatefulWidget {
   final GlobalKey<FormState> formKey;
   final TextEditingController userCtrl;
   final TextEditingController passCtrl;
+  final Function(String)? validator;
   final Function()? onPressed;
   const FormLogin(
       {required this.formKey,
       required this.userCtrl,
       required this.passCtrl,
+      this.validator,
       this.onPressed})
       : super();
 
@@ -28,7 +30,7 @@ class _FormLoginState extends State<FormLogin> {
         bottom: false,
         child: Scaffold(
           body: SingleChildScrollView(
-            physics: BouncingScrollPhysics(),
+            physics: const BouncingScrollPhysics(),
             keyboardDismissBehavior: ScrollViewKeyboardDismissBehavior.onDrag,
             child: Container(
               width: MediaQuery.of(context).size.width,
@@ -74,6 +76,24 @@ class _FormLoginState extends State<FormLogin> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: ThemeText.login,
+                        decoration: InputDecoration(
+                          isDense: true,
+                          filled: true,
+                          fillColor: Colors.grey,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          hintText: 'ID Login',
+                          hintStyle: TextStyle(
+                              fontWeight: FontWeight.w400, fontSize: 14),
+                          contentPadding: EdgeInsets.only(
+                              left: 20, right: 20, top: 15, bottom: 9),
+                          suffixIcon: Icon(
+                            Icons.person,
+                            color: Colors.black,
+                          ),
+                        ),
                         controller: widget.userCtrl,
                         maxLines: 1,
                         validator: (value) {
@@ -91,6 +111,24 @@ class _FormLoginState extends State<FormLogin> {
                       padding: const EdgeInsets.symmetric(horizontal: 20),
                       child: TextFormField(
                         style: ThemeText.login,
+                        decoration: InputDecoration(
+                          isDense: true,
+                          filled: true,
+                          fillColor: Colors.grey,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                          hintText: 'ID Login',
+                          hintStyle: TextStyle(
+                              fontWeight: FontWeight.w400, fontSize: 14),
+                          contentPadding: EdgeInsets.only(
+                              left: 20, right: 20, top: 15, bottom: 9),
+                          suffixIcon: Icon(
+                            Icons.person,
+                            color: Colors.black,
+                          ),
+                        ),
                         controller: widget.passCtrl,
                         maxLines: 1,
                         validator: (value) {
